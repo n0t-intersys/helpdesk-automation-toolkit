@@ -1,0 +1,92 @@
+[
+  {
+    "id": "TKT-001",
+    "subject": "Cannot log into VPN after password reset",
+    "body": "User reports being unable to connect to the VPN since their Active Directory password was reset yesterday. Error message: Authentication failed. Cisco AnyConnect client version 4.10.",
+    "priority": "P2",
+    "created_at": "2025-01-15T08:30:00Z",
+    "requester": "john.smith@company.com",
+    "department": "Finance"
+  },
+  {
+    "id": "TKT-002",
+    "subject": "Laptop screen flickering and going black",
+    "body": "My Dell XPS 15 screen has been flickering intermittently since this morning. It sometimes goes completely black for 2-3 seconds. The external monitor works fine.",
+    "priority": "P3",
+    "created_at": "2025-01-15T09:15:00Z",
+    "requester": "alice.johnson@company.com",
+    "department": "Marketing"
+  },
+  {
+    "id": "TKT-003",
+    "subject": "Ransomware alert on workstation WS-FIN-042",
+    "body": "CRITICAL: CrowdStrike has detected ransomware activity on workstation WS-FIN-042. Files are being encrypted. The machine has been isolated from the network. Immediate response required.",
+    "priority": "P1",
+    "created_at": "2025-01-15T10:00:00Z",
+    "requester": "security.team@company.com",
+    "department": "Security"
+  },
+  {
+    "id": "TKT-004",
+    "subject": "Need access to SharePoint project site",
+    "body": "I need read access to the SharePoint site 'Project-Alpha-2025'. My manager Bob Williams has approved this request. Please grant access as soon as possible.",
+    "priority": "P3",
+    "created_at": "2025-01-15T10:30:00Z",
+    "requester": "mike.chen@company.com",
+    "department": "Operations"
+  },
+  {
+    "id": "TKT-005",
+    "subject": "Network drive Z: not mapping on startup",
+    "body": "The Z: drive (\\\\fileserver01\\shared) is no longer mapping automatically at login. This started after the group policy update last week. Affects all users in the Seattle office.",
+    "priority": "P2",
+    "created_at": "2025-01-15T11:00:00Z",
+    "requester": "helpdesk@company.com",
+    "department": "IT"
+  },
+  {
+    "id": "TKT-006",
+    "subject": "Microsoft Office keeps crashing on launch",
+    "body": "Word, Excel, and Outlook are all crashing immediately after launch. The error says 'Application cannot start' and references a corrupted DLL. I've tried restarting multiple times.",
+    "priority": "P2",
+    "created_at": "2025-01-15T11:30:00Z",
+    "requester": "sarah.davis@company.com",
+    "department": "HR"
+  },
+  {
+    "id": "TKT-007",
+    "subject": "New hire account setup - Robert Martinez starts Monday",
+    "body": "New employee Robert Martinez (r.martinez@company.com) starts Monday 2025-01-20 in the Engineering department. Please create AD account, set up email, assign M365 E3 license, and grant access to standard engineering tools.",
+    "priority": "P2",
+    "created_at": "2025-01-15T12:00:00Z",
+    "requester": "hr@company.com",
+    "department": "HR"
+  },
+  {
+    "id": "TKT-008",
+    "subject": "Suspicious phishing email received",
+    "body": "I received an email claiming to be from IT support asking for my login credentials. The sender address was it-support@c0mpany.com (note the zero). I did not click any links. Attaching the email headers.",
+    "priority": "P2",
+    "created_at": "2025-01-15T13:00:00Z",
+    "requester": "lisa.wong@company.com",
+    "department": "Legal"
+  },
+  {
+    "id": "TKT-009",
+    "subject": "Printer on floor 3 not responding",
+    "body": "The HP LaserJet Pro M404dn on the 3rd floor (IP: 192.168.3.45) is showing offline. I've tried power cycling. Print jobs are queuing but not printing. This affects 20 people.",
+    "priority": "P3",
+    "created_at": "2025-01-15T13:30:00Z",
+    "requester": "tom.harris@company.com",
+    "department": "Operations"
+  },
+  {
+    "id": "TKT-010",
+    "subject": "Request admin rights for software installation",
+    "body": "I need temporary admin rights to install Wireshark and Python 3.12 for a security assessment project. My manager has approved this. Duration: 48 hours.",
+    "priority": "P3",
+    "created_at": "2025-01-15T14:00:00Z",
+    "requester": "james.taylor@company.com",
+    "department": "Security"
+  }
+]

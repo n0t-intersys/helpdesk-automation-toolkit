@@ -1,0 +1,141 @@
+{
+  "version": "1.0",
+  "last_updated": "2025-01-15",
+  "articles": [
+    {
+      "id": "KB-0001",
+      "title": "VPN Connection Fails After Password Reset",
+      "category": "Network",
+      "tags": ["vpn", "cisco", "anyconnect", "password", "authentication", "active directory"],
+      "content": "Users may experience VPN authentication failures after an Active Directory password reset. This occurs because the VPN client caches credentials and the new password has not yet synchronized to the RADIUS server.",
+      "steps": [
+        "Disconnect and close the VPN client completely",
+        "Wait 5 minutes for AD password replication to complete across all DCs",
+        "Reopen Cisco AnyConnect and enter the new credentials",
+        "If issue persists, flush DNS: ipconfig /flushdns",
+        "Verify the user account is not locked in Active Directory Users and Computers",
+        "Check RADIUS server logs for authentication error codes",
+        "Escalate to Network team if error code 691 persists after above steps"
+      ]
+    },
+    {
+      "id": "KB-0002",
+      "title": "Resetting Active Directory User Password",
+      "category": "Access Management",
+      "tags": ["password", "reset", "active directory", "ad", "account", "locked"],
+      "content": "Standard procedure for resetting an Active Directory password. Requires authentication of the user's identity before proceeding. Never reset a password without verifying identity.",
+      "steps": [
+        "Verify caller identity via employee ID or manager confirmation",
+        "Open Active Directory Users and Computers (ADUC)",
+        "Search for the user account by name or username",
+        "Right-click the account and select 'Reset Password'",
+        "Set a temporary password meeting complexity requirements",
+        "Check 'User must change password at next logon'",
+        "Unlock the account if it is locked",
+        "Communicate temporary password via secure channel (not email)"
+      ]
+    },
+    {
+      "id": "KB-0003",
+      "title": "Microsoft Office Applications Crashing on Launch",
+      "category": "Software",
+      "tags": ["office", "microsoft", "word", "excel", "outlook", "crash", "dll", "corrupt"],
+      "content": "Office application crashes on launch are typically caused by corrupt Office installation files, conflicting add-ins, or corrupted user profile. Most cases are resolved by repairing the Office installation.",
+      "steps": [
+        "Open Settings > Apps > Installed Apps > search 'Microsoft 365'",
+        "Click the three dots and select 'Modify'",
+        "Choose 'Quick Repair' first (does not require internet)",
+        "If Quick Repair fails, run 'Online Repair'",
+        "If issue persists, disable all Office add-ins: File > Options > Add-ins > Manage COM Add-ins > Go > uncheck all",
+        "Test with a new Windows user profile to rule out profile corruption",
+        "As last resort, fully uninstall Office using the Microsoft Support and Recovery Assistant (SaRA)"
+      ]
+    },
+    {
+      "id": "KB-0004",
+      "title": "Network Drive Not Mapping at Login",
+      "category": "Network",
+      "tags": ["network drive", "file server", "mapping", "group policy", "gpo", "login"],
+      "content": "Network drives that fail to map at login are commonly caused by Group Policy processing failures, DNS resolution issues, or the user logging in before the network is fully available.",
+      "steps": [
+        "Run 'gpresult /r' to check if drive mapping GPO is applied",
+        "Run 'gpupdate /force' and restart",
+        "Check Event Viewer > Applications and Services > Microsoft > Windows > GroupPolicy for errors",
+        "Verify the file server is reachable: ping fileserver01",
+        "Manually attempt to map the drive: net use Z: \\\\fileserver01\\shared",
+        "Check that the user is a member of the security group that the GPO targets",
+        "Enable verbose GPO logging: HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\UserPolicyMode = 1",
+        "Escalate to Windows Infrastructure team if GPO errors reference SYSVOL replication"
+      ]
+    },
+    {
+      "id": "KB-0005",
+      "title": "Responding to a Phishing Email Report",
+      "category": "Security",
+      "tags": ["phishing", "email", "security incident", "malicious", "spoof", "suspicious"],
+      "content": "When a user reports a suspicious phishing email, immediate triage is required to assess exposure and prevent further spread. Do not instruct the user to click links for investigation.",
+      "steps": [
+        "Ask the user if they clicked any links or opened attachments — document the answer",
+        "Instruct the user to report the email using 'Report Phishing' button in Outlook",
+        "If links were clicked: immediately escalate to Security team (Priority 1)",
+        "Pull email headers and submit to Security for IOC extraction",
+        "Search email gateway logs for the same sender across all mailboxes",
+        "If malicious: block sender domain at email gateway and notify all recipients",
+        "Open a Security Incident ticket if any user clicked links or entered credentials",
+        "Follow the Phishing Response IR Playbook (IR-PB-002)"
+      ]
+    },
+    {
+      "id": "KB-0006",
+      "title": "Setting Up MFA with Microsoft Authenticator",
+      "category": "Access Management",
+      "tags": ["mfa", "multi-factor", "authenticator", "microsoft", "2fa", "setup"],
+      "content": "Multi-factor authentication setup procedure for new users or MFA resets. MFA is mandatory for all accounts accessing company resources.",
+      "steps": [
+        "Navigate to aka.ms/mfasetup on the user's device",
+        "Sign in with company credentials",
+        "Click 'Add sign-in method' and select 'Authenticator app'",
+        "Download Microsoft Authenticator from App Store or Google Play",
+        "Scan the QR code displayed on screen",
+        "Enter the 6-digit code from the app to verify",
+        "Set Authenticator as the default method",
+        "Register a backup phone number as secondary method",
+        "Test the MFA flow by logging out and back in"
+      ]
+    },
+    {
+      "id": "KB-0007",
+      "title": "Laptop Screen Flickering or Display Issues",
+      "category": "Hardware",
+      "tags": ["screen", "display", "flickering", "monitor", "laptop", "gpu", "driver"],
+      "content": "Screen flickering on laptops is most often caused by outdated or corrupted display drivers, incompatible refresh rates, or a failing display cable. Determine if the issue affects external monitors to isolate hardware vs. software.",
+      "steps": [
+        "Connect an external monitor — if external is stable, issue is likely display hardware or cable",
+        "Update display driver: Device Manager > Display Adapters > Update Driver",
+        "Disable hardware acceleration in browsers and Office apps",
+        "Check Task Manager > Performance — if CPU/GPU spikes correlate with flicker, suspect software",
+        "Boot into Safe Mode — if flickering stops, a driver or application is the cause",
+        "Run Windows Memory Diagnostic to rule out RAM issues",
+        "For Dell laptops: run Dell SupportAssist hardware diagnostic",
+        "If flickering persists in Safe Mode with external monitor OK: escalate for display cable replacement"
+      ]
+    },
+    {
+      "id": "KB-0008",
+      "title": "Granting SharePoint Site Access",
+      "category": "Access Management",
+      "tags": ["sharepoint", "access", "permission", "site", "groups", "m365"],
+      "content": "SharePoint access requests must be fulfilled with manager approval documented in the ticket. Access should follow the principle of least privilege — grant read unless write is justified.",
+      "steps": [
+        "Verify manager approval is documented in the ticket",
+        "Navigate to the SharePoint site as a site admin",
+        "Click Settings (gear icon) > Site Permissions",
+        "Click 'Add Members' and search for the user",
+        "Select appropriate permission level (Read/Edit/Full Control)",
+        "Default to 'Read' unless write access is explicitly requested and approved",
+        "Send access confirmation to the user",
+        "Document the access grant in the ticket and close"
+      ]
+    }
+  ]
+}
