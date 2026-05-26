@@ -1,19 +1,10 @@
-# helpdesk-automation-toolkit
-
-```
-┌─────────────────────────────────────────────────────────────────────┐
-│  IT Service Desk Automation Suite                                    │
-│  Ticket Classification · SLA Monitoring · Onboarding · KB Search    │
-└─────────────────────────────────────────────────────────────────────┘
-```
+# Service Desk Automation
 
 [![CI](https://github.com/n0t-intersys/helpdesk-automation-toolkit/actions/workflows/ci.yml/badge.svg)](https://github.com/n0t-intersys/helpdesk-automation-toolkit/actions)
 [![Python](https://img.shields.io/badge/Python-3.11%2B-blue?logo=python&logoColor=white)](https://python.org)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Code Style: flake8](https://img.shields.io/badge/code%20style-flake8-blueviolet)](https://flake8.pycqa.org/)
 
-A Python toolkit simulating core IT service desk workflows — designed to demonstrate
-automation, ML-assisted classification, and SLA governance in a realistic helpdesk context.
+Ticket triaging by hand doesn't scale. This toolkit handles classification with a hybrid keyword + Naive Bayes model, tracks SLA breaches in real time, automates user onboarding checklists, and surfaces relevant KB articles — the kind of stuff that used to eat half a helpdesk shift.
 
 ---
 
